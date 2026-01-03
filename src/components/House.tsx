@@ -49,15 +49,12 @@ export const House = () => {
     };
   }, [scene]);
 
-  const [physicsRef] = useTrimesh(
-    () => ({
-      // Cast the arguments to any or the specific expected tuple to satisfy TS
-      args: [vertices as unknown as number[], indices as unknown as number[]],
-      mass: 0,
-      type: 'Static',
-    }),
-    [vertices, indices]
-  );
+  const [physicsRef] = useTrimesh(() => ({
+    // Cast the arguments to any or the specific expected tuple to satisfy TS
+    args: [vertices as unknown as number[], indices as unknown as number[]],
+    mass: 0,
+    type: 'Static',
+  }));
 
   return (
     <group>
