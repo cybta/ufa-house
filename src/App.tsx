@@ -14,12 +14,9 @@ function App() {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <Canvas camera={{ fov: 45 }}>
-        {/* Lights */}
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-        {/* Environment */}
         <Sky sunPosition={[100, 20, 100]} />
-        // src/App.tsx
+        <ambientLight intensity={1} />
+
         <Physics
           gravity={[0, -9.8, 0]}
           tolerance={0.001} // High precision
@@ -45,6 +42,19 @@ function App() {
             position={[-4.99, 0.6, 5]}
             rotation={[0, Math.PI / 2, 0]}
           />
+
+          <PhysicsObject
+            url='/3dmodels/kitchen.glb'
+            position={[-5.5, 0.6, 1.9]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+
+          <PhysicsObject
+            url='/3dmodels/desk.glb'
+            position={[-4.99, 3.6, 7]}
+            rotation={[0, 0, 0]}
+          />
+
           <Ground />
           {/* </Debug> */}
         </Physics>

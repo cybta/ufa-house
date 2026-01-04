@@ -21,10 +21,10 @@ export const HouseLights = ({ position, intensity, distance }: LightProps) => {
       />
 
       {/* Optional: Add a small visible sphere so you can see where the bulb is */}
-      <mesh position={position}>
+      {/* <mesh position={position}>
         <sphereGeometry args={[0.1]} />
         <meshStandardMaterial emissive='white' />
-      </mesh>
+      </mesh> */}
     </group>
   );
 };
