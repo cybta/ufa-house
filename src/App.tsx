@@ -8,6 +8,7 @@ import { Ground } from './components/Ground';
 // import { HouseLights } from './components/HouseLight';
 import FirstFloorLights from './components/lights/FirstFloorLights';
 import SecondFloorLights from './components/lights/SecondFloorLights';
+import OuterLights from './components/lights/OuterLights';
 // import { Debug } from '@react-three/cannon'; // Import this
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
         <FirstFloorLights />
         <SecondFloorLights />
         <PointerLockControls />
+        <OuterLights />
       </Canvas>
 
       {/* Overlay Instructions */}
