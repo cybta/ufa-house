@@ -37,7 +37,7 @@ export const Player = () => {
 
   useFrame(() => {
     // 1. Position camera at player's "head"
-    camera.position.set(pos.current[0], pos.current[1] + 0.6, pos.current[2]);
+    camera.position.set(pos.current[0], pos.current[1] + 1, pos.current[2]);
 
     // 2. Calculate movement direction
     const frontVector = new THREE.Vector3(
