@@ -2,10 +2,12 @@
 import { Canvas } from '@react-three/fiber';
 import { Physics } from '@react-three/cannon';
 import { PointerLockControls, Sky } from '@react-three/drei';
-import { House } from './components/House';
+import { PhysicsObject } from './components/3DObject';
 import { Player } from './components/Player';
 import { Ground } from './components/Ground';
-import { HouseLights } from './components/HouseLight';
+// import { HouseLights } from './components/HouseLight';
+import FirstFloorLights from './components/lights/FirstFloorLights';
+import SecondFloorLights from './components/lights/SecondFloorLights';
 // import { Debug } from '@react-three/cannon'; // Import this
 
 function App() {
@@ -31,30 +33,23 @@ function App() {
         >
           {/* <Debug> */}
           <Player />
-          <House />
+
+          <PhysicsObject
+            url='/3dmodels/house.glb'
+            position={[-7.5, 0, 4.5]}
+            rotation={[0, Math.PI / 2, 0]}
+          />
+
+          <PhysicsObject
+            url='/3dmodels/entrance.glb'
+            position={[-4.99, 0.6, 5]}
+            rotation={[0, Math.PI / 2, 0]}
+          />
           <Ground />
           {/* </Debug> */}
         </Physics>
-        {/* Open Space lights */}
-        <HouseLights position={[2.5, 2.5, -1.5]} intensity={1} distance={25} />
-        <HouseLights position={[2.5, 2.5, 2]} intensity={1} distance={25} />
-        {/* Entrance */}
-        <HouseLights position={[-0.4, 2.5, 2]} intensity={0.1} distance={25} />
-        {/* Utility room */}
-        <HouseLights position={[-2.4, 2.5, 1.5]} intensity={1} distance={25} />
-        {/* Bedroom */}
-        <HouseLights position={[-2.4, 2.5, -1]} intensity={2} distance={25} />
-        {/* ______________________________________________________________ */}
-        {/* SECOND FLOOR */}
-        {/* Open Space lights */}
-        <HouseLights position={[2.5, 5, -1.5]} intensity={1} distance={25} />
-        <HouseLights position={[2.5, 5, 1.4]} intensity={1} distance={25} />
-        {/* Bathroom */}
-        <HouseLights position={[-0.4, 5, 2.4]} intensity={0.5} distance={25} />
-        {/* Utility room */}
-        <HouseLights position={[-2.4, 5, 1.5]} intensity={1} distance={25} />
-        {/* Bedroom */}
-        <HouseLights position={[-2.4, 5, -1]} intensity={2} distance={25} />
+        <FirstFloorLights />
+        <SecondFloorLights />
         <PointerLockControls />
       </Canvas>
 
