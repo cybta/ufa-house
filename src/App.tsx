@@ -1,4 +1,5 @@
 // src/App.tsx
+import { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Physics } from '@react-three/cannon';
 import { PointerLockControls, Sky } from '@react-three/drei';
@@ -12,6 +13,21 @@ import OuterLights from './components/lights/OuterLights';
 // import { Debug } from '@react-three/cannon'; // Import this
 
 function App() {
+  const [isFurnitureHidden, setFurnitureHidden] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'h' || event.key === 'H') {
+        setFurnitureHidden((prev) => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <Canvas camera={{ fov: 45 }}>
@@ -38,22 +54,34 @@ function App() {
             rotation={[0, Math.PI / 2, 0]}
           />
 
+          {!isFurnitureHidden ? (
+            <>
+              <PhysicsObject
+                url='/3dmodels/entrance.glb'
+                position={[-4.99, 0.6, 5]}
+                rotation={[0, Math.PI / 2, 0]}
+              />
+
+              <PhysicsObject
+                url='/3dmodels/kitchen.glb'
+                position={[-5.5, 0.6, 1.9]}
+                rotation={[0, -Math.PI / 2, 0]}
+              />
+
+              <PhysicsObject
+                url='/3dmodels/desk.glb'
+                position={[-4.99, 3.6, 7]}
+                rotation={[0, 0, 0]}
+              />
+            </>
+          ) : (
+            <></>
+          )}
+
           <PhysicsObject
-            url='/3dmodels/entrance.glb'
-            position={[-4.99, 0.6, 5]}
+            url='/3dmodels/bathroom-f2.glb'
+            position={[-5, 3.6, 5.3]}
             rotation={[0, Math.PI / 2, 0]}
-          />
-
-          <PhysicsObject
-            url='/3dmodels/kitchen.glb'
-            position={[-5.5, 0.6, 1.9]}
-            rotation={[0, -Math.PI / 2, 0]}
-          />
-
-          <PhysicsObject
-            url='/3dmodels/desk.glb'
-            position={[-4.99, 3.6, 7]}
-            rotation={[0, 0, 0]}
           />
 
           <Ground />
