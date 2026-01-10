@@ -37,7 +37,7 @@ export const Player = () => {
 
   useFrame(() => {
     // 1. Position camera at player's "head"
-    camera.position.set(pos.current[0], pos.current[1] + 1, pos.current[2]);
+    camera.position.set(pos.current[0], pos.current[1] + 1.3, pos.current[2]);
 
     // 2. Calculate movement direction
     const frontVector = new THREE.Vector3(
@@ -73,55 +73,46 @@ export const Player = () => {
 };
 
 function usePlayerControls() {
-  const [movement, setMovement] = useState({
+  const [actions, setActions] = useState({
     moveForward: false,
     moveBackward: false,
     moveLeft: false,
     moveRight: false,
+    jump: false,
   });
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      switch (e.code) {
-        case 'KeyW':
-          setMovement((m) => ({ ...m, moveForward: true }));
-          break;
-        case 'KeyS':
-          setMovement((m) => ({ ...m, moveBackward: true }));
-          break;
-        case 'KeyA':
-          setMovement((m) => ({ ...m, moveLeft: true }));
-          break;
-        case 'KeyD':
-          setMovement((m) => ({ ...m, moveRight: true }));
-          break;
-      }
+      if (e.code === 'KeyW')
+        setActions((prev) => ({ ...prev, moveForward: true }));
+      if (e.code === 'KeyS')
+        setActions((prev) => ({ ...prev, moveBackward: true }));
+      if (e.code === 'KeyA')
+        setActions((prev) => ({ ...prev, moveLeft: true }));
+      if (e.code === 'KeyD')
+        setActions((prev) => ({ ...prev, moveRight: true }));
+      if (e.code === 'Space') setActions((prev) => ({ ...prev, jump: true }));
     };
 
     const handleKeyUp = (e: KeyboardEvent) => {
-      switch (e.code) {
-        case 'KeyW':
-          setMovement((m) => ({ ...m, moveForward: false }));
-          break;
-        case 'KeyS':
-          setMovement((m) => ({ ...m, moveBackward: false }));
-          break;
-        case 'KeyA':
-          setMovement((m) => ({ ...m, moveLeft: false }));
-          break;
-        case 'KeyD':
-          setMovement((m) => ({ ...m, moveRight: false }));
-          break;
-      }
+      if (e.code === 'KeyW')
+        setActions((prev) => ({ ...prev, moveForward: false }));
+      if (e.code === 'KeyS')
+        setActions((prev) => ({ ...prev, moveBackward: false }));
+      if (e.code === 'KeyA')
+        setActions((prev) => ({ ...prev, moveLeft: false }));
+      if (e.code === 'KeyD')
+        setActions((prev) => ({ ...prev, moveRight: false }));
+      if (e.code === 'Space') setActions((prev) => ({ ...prev, jump: false }));
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('keyup', handleKeyUp);
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keyup', handleKeyUp);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('keyup', handleKeyUp);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keyup', handleKeyUp);
     };
   }, []);
 
-  return movement;
+  return actions;
 }
