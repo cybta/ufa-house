@@ -51,7 +51,7 @@ const InterActionPopup = ({
         canvasEl?.focus();
       }, 0);
     };
-  }, [setShowOverlay, canvasEl]); // Add canvasRef to dependencies
+  }, [setShowOverlay, canvasEl, room]); // Add canvasRef to dependencies
 
   return (
     <div
