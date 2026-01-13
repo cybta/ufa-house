@@ -1,0 +1,22 @@
+import type { ThreeModel } from '../../../types';
+
+export const furnitureModels: ThreeModel[] = [
+  {
+    name: 'entrance',
+    model: '/3dmodels/entrance.glb',
+    position: [-4.99, 0.6, 5],
+    rotation: [0, Math.PI / 2, 0],
+  },
+  {
+    name: 'kitchen',
+    model: '/3dmodels/kitchen.glb',
+    position: [-5.4, 0.6, 1.95],
+    rotation: [0, -Math.PI / 2, 0],
+  },
+  {
+    name: 'bathroom-f2',
+    model: '/3dmodels/bathroom-f2.glb',
+    position: [-5, 3.6, 5.3],
+    rotation: [0, Math.PI / 2, 0],
+  },
+];

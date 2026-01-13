@@ -9,6 +9,9 @@ import { Player } from './components/Player';
 import { InteractableObject } from './components/InteractableModel';
 import SecondFloorLights from './components/lights/SecondFloorLights';
 import InterActionPopup from './components/popups';
+
+import { fixedModels, furnitureModels, interactiveModels } from './data';
+
 // import { Debug } from '@react-three/cannon'; // Import this
 
 function HouseScene() {
@@ -96,59 +99,38 @@ function HouseScene() {
           {/* <Debug> */}
           <Player />
 
-          {/* 2. Specific Interactable Model (The Desk) */}
-          <InteractableObject
-            url='/3dmodels/desk.glb'
-            position={[-4.99, 3.6, 7]}
-            onInteract={() => {
-              console.log('Interacted!');
-              setShowOverlay(true);
-              // Note: You might want to unlock pointer controls here
-              // so the user can click the "Close" button.
-            }}
-          />
+          {fixedModels.map((model) => (
+            <PhysicsObject
+              url={model.model}
+              position={model.position}
+              rotation={model.rotation || [0, 0, 0]}
+            />
+          ))}
 
-          <PhysicsObject
-            url='/3dmodels/house.glb'
-            position={[-7.5, 0, 4.5]}
-            rotation={[0, Math.PI / 2, 0]}
-          />
+          {interactiveModels.map((model) => (
+            <InteractableObject
+              url={model.model}
+              position={model.position}
+              rotation={model.rotation}
+              onInteract={() => {
+                setShowOverlay(true);
+              }}
+            />
+          ))}
 
           {!isFurnitureHidden ? (
             <>
-              <PhysicsObject
-                url='/3dmodels/entrance.glb'
-                position={[-4.99, 0.6, 5]}
-                rotation={[0, Math.PI / 2, 0]}
-              />
-
-              <PhysicsObject
-                url='/3dmodels/kitchen.glb'
-                position={[-5.4, 0.6, 1.95]}
-                rotation={[0, -Math.PI / 2, 0]}
-              />
-
-              <PhysicsObject
-                url='/3dmodels/desk.glb'
-                position={[-4.99, 3.6, 7]}
-                rotation={[0, 0, 0]}
-              />
+              {furnitureModels.map((model) => (
+                <PhysicsObject
+                  url={model.model}
+                  position={model.position}
+                  rotation={model.rotation || [0, 0, 0]}
+                />
+              ))}
             </>
           ) : (
             <></>
           )}
-
-          <PhysicsObject
-            url='/3dmodels/bathroom-f2.glb'
-            position={[-5, 3.6, 5.3]}
-            rotation={[0, Math.PI / 2, 0]}
-          />
-
-          <PhysicsObject
-            url='/3dmodels/land.glb'
-            position={[-11, 0, 1]}
-            rotation={[0, 0, 0]}
-          />
 
           {/* </Debug> */}
         </Physics>
