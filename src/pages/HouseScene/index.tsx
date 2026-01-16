@@ -34,7 +34,6 @@ function HouseScene() {
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      {/* 1. This is your HTML Div that shows on top of the screen */}
       {showOverlay && (
         <div
           style={{
@@ -52,32 +51,36 @@ function HouseScene() {
           <InterActionPopup
             room='desk'
             setShowOverlay={setShowOverlay}
-            canvasEl={canvasEl} // This now matches the interface
+            canvasEl={canvasEl}
           />
         </div>
       )}
       <Canvas
         shadows
-        dpr={[1, 2]} // Limits pixel ratio on high-res screens to save GPU
+        dpr={[1, 2]}
         camera={{ fov: 45, position: [0, 5, 10] }}
         gl={{
           antialias: true,
-          toneMappingExposure: 0.6,
-          powerPreference: 'high-performance', // Hints the browser to use the GPU
+          // CHANGE 1: Increased from 0.6 to 1.2 (Global Brightness)
+          toneMappingExposure: 1,
+          powerPreference: 'high-performance',
         }}
         onCreated={({ gl }) => setCanvasEl(gl.domElement)}
       >
         <Sky sunPosition={[100, 20, 100]} />
-        <ambientLight intensity={0.4} />
 
-        {/* Only use environment for lighting, not as a background */}
-        <Environment preset='apartment' />
+        {/* CHANGE 2: Increased from 0.4 to 0.8 (Brighter shadows) */}
+        <ambientLight intensity={0.8} />
 
+        {/* CHANGE 3: Added environment intensity (Brighter reflections) */}
+        <Environment preset='apartment' environmentIntensity={1.1} />
+
+        {/* CHANGE 4: Increased from 1.0 to 2.5 (Brighter Sun) */}
         <directionalLight
           position={[10, 15, 10]}
-          intensity={1.0}
+          intensity={1.5}
           castShadow
-          shadow-mapSize={[1024, 1024]} // Reduced from 2048
+          shadow-mapSize={[1024, 1024]}
           shadow-camera-far={50}
           shadow-camera-left={-20}
           shadow-camera-right={20}
@@ -87,28 +90,29 @@ function HouseScene() {
 
         <Physics
           gravity={[0, -9.7, 0]}
-          tolerance={0.001} // High precision
-          iterations={20} // More calculations per frame
+          tolerance={0.001}
+          iterations={20}
           defaultContactMaterial={{
             friction: 0,
             restitution: 0,
-            contactEquationStiffness: 1e6, // Makes walls feel "harder"
+            contactEquationStiffness: 1e6,
             contactEquationRelaxation: 2,
           }}
         >
-          {/* <Debug> */}
           <Player />
 
-          {fixedModels.map((model) => (
+          {fixedModels.map((model, index) => (
             <PhysicsObject
+              key={`fixed-${index}`}
               url={model.model}
               position={model.position}
               rotation={model.rotation || [0, 0, 0]}
             />
           ))}
 
-          {interactiveModels.map((model) => (
+          {interactiveModels.map((model, index) => (
             <InteractableObject
+              key={`inter-${index}`}
               url={model.model}
               position={model.position}
               rotation={model.rotation}
@@ -118,23 +122,17 @@ function HouseScene() {
             />
           ))}
 
-          {!isFurnitureHidden ? (
-            <>
-              {furnitureModels.map((model) => (
-                <PhysicsObject
-                  url={model.model}
-                  position={model.position}
-                  rotation={model.rotation || [0, 0, 0]}
-                />
-              ))}
-            </>
-          ) : (
-            <></>
-          )}
-
-          {/* </Debug> */}
+          {!isFurnitureHidden &&
+            furnitureModels.map((model, index) => (
+              <PhysicsObject
+                key={`furn-${index}`}
+                url={model.model}
+                position={model.position}
+                rotation={model.rotation || [0, 0, 0]}
+              />
+            ))}
         </Physics>
-        {/* <FirstFloorLights /> */}
+
         <SecondFloorLights />
         <PointerLockControls />
       </Canvas>
