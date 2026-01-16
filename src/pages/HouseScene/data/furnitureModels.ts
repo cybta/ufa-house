@@ -19,4 +19,10 @@ export const furnitureModels: ThreeModel[] = [
     position: [-5, 3.6, 5.3],
     rotation: [0, Math.PI / 2, 0],
   },
+  {
+    name: 'Desk',
+    model: '/3dmodels/desk.glb',
+    position: [-5, 3.6, 7],
+    rotation: [0, 0, 0],
+  },
 ];
