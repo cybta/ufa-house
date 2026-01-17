@@ -25,25 +25,25 @@ export const fixedModels: ThreeModel[] = [
   {
     name: 'Salon radiator',
     model: '/3dmodels/radiator.glb',
-    position: [-9.5, 0.95, 3.72],
+    position: [-9.5, 0.91, 3.72],
     rotation: [0, 0, 0],
   },
   {
     name: 'Kitchen radiator',
     model: '/3dmodels/radiator.glb',
-    position: [-7.6, 0.95, 0.25],
+    position: [-7.6, 0.91, 0.25],
     rotation: [0, 0, 0],
   },
   {
     name: 'UtilityRoom radiator',
     model: '/3dmodels/radiator.glb',
-    position: [-4.7, 0.95, 8.85],
-    rotation: [0, 0, 0],
+    position: [-6.9, 0.91, 8.35],
+    rotation: [0, Math.PI / 2, 0],
   },
   {
     name: 'Guestroom radiator',
     model: '/3dmodels/radiator.glb',
-    position: [-7.7, 0.95, 8.85],
+    position: [-7.7, 0.91, 8.85],
     rotation: [0, 0, 0],
   },
   {
