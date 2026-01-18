@@ -61,7 +61,7 @@ export const fixedModels: ThreeModel[] = [
   {
     name: 'Small bedroom F2 B radiator',
     model: '/3dmodels/radiator.glb',
-    position: [-4.61, 3.95, 3.9],
+    position: [-4.75, 3.95, 0.25],
     rotation: [0, 0, 0],
   },
   {

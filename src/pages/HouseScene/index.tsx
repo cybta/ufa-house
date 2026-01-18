@@ -7,9 +7,7 @@ import { PointerLockControls, Sky, Environment } from '@react-three/drei';
 import { PhysicsObject } from './components/3DObject';
 import { Player } from './components/Player';
 import { InteractableObject } from './components/InteractableModel';
-import SecondFloorLights from './components/lights/SecondFloorLights';
 import InterActionPopup from './components/popups';
-
 import { fixedModels, furnitureModels, interactiveModels } from './data';
 
 // import { Debug } from '@react-three/cannon'; // Import this
@@ -133,7 +131,6 @@ function HouseScene() {
             ))}
         </Physics>
 
-        <SecondFloorLights />
         <PointerLockControls />
       </Canvas>
     </div>
