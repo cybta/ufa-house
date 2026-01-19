@@ -37,17 +37,10 @@ export const interactiveModels: ThreeModel[] = [
   },
 
   {
-    name: 'Kitchen-light-switch',
-    model: '/3dmodels/sockets/single-switch.glb',
-    position: [-6.5, 1.6, 3.75],
-    rotation: [Math.PI / 2, 0, -Math.PI / 1],
-  },
-
-  {
-    name: 'LivingRoom-light-switch',
-    model: '/3dmodels/sockets/single-switch.glb',
-    position: [-8, 1.6, 3.75],
-    rotation: [Math.PI / 2, 0, -Math.PI / 1],
+    name: 'OpenSpace-light-switch',
+    model: '/3dmodels/sockets/dual-single.glb',
+    position: [-8.05, 1.6, 3.75],
+    rotation: [Math.PI / 2, Math.PI / 1, -Math.PI / 1],
   },
 
   {

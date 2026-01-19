@@ -16,13 +16,13 @@ export const furnitureModels: ThreeModel[] = [
   {
     name: 'bathroom-f2',
     model: '/3dmodels/bathroom-f2.glb',
-    position: [-5, 3.6, 5.3],
+    position: [-4.945, 3.6, 5.32],
     rotation: [0, Math.PI / 2, 0],
   },
   {
     name: 'Desk',
     model: '/3dmodels/desk.glb',
-    position: [-5, 3.6, 7],
+    position: [-4.95, 3.6, 7],
     rotation: [0, 0, 0],
   },
 ];
