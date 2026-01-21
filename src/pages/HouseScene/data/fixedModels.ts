@@ -21,6 +21,20 @@ export const fixedModels: ThreeModel[] = [
     rotation: [0, Math.PI / 1, 0],
   },
 
+  {
+    name: 'Kitchen Directional Lights',
+    model: '/3dmodels/directional-lights.glb',
+    position: [-5, 3.38, 1.75],
+    rotation: [0, Math.PI / 2, 0],
+  },
+
+  {
+    name: 'LigvingRoom Directional Lights',
+    model: '/3dmodels/directional-lights.glb',
+    position: [-10, 3.38, 1.75],
+    rotation: [0, -Math.PI / 2, 0],
+  },
+
   // Radiators
   {
     name: 'entrance radiator',
