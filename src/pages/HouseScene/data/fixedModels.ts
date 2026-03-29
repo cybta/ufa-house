@@ -69,7 +69,7 @@ export const fixedModels: ThreeModel[] = [
   {
     name: 'Big bedroom radiator',
     model: '/3dmodels/radiators/800.glb',
-    position: [-7.6, 3.95, 0.25],
+    position: [-10.25, 3.95, 0.25],
     rotation: [0, 0, 0],
   },
   {
@@ -167,5 +167,55 @@ export const fixedModels: ThreeModel[] = [
     model: '/3dmodels/sockets/single-socket.glb',
     position: [-10.8, 1, 8.5],
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
+  },
+
+  // Second Floor Sockets
+  {
+    name: 'Desk Sockets',
+    model: '/3dmodels/sockets/socket-socket-socket-ethernet.glb',
+    position: [-5.2, 4.1, 6.65],
+    rotation: [-Math.PI / 2, 0, Math.PI / 1],
+  },
+  {
+    name: 'Desk wall Socket',
+    model: '/3dmodels/sockets/socket-socket.glb',
+    position: [-4.15, 3.8, 7.5],
+    rotation: [-Math.PI / 2, 0, Math.PI / 2],
+  },
+  {
+    name: 'Desk window Sockets',
+    model: '/3dmodels/sockets/socket-socket.glb',
+    position: [-6.85, 3.8, 8.5],
+    rotation: [-Math.PI / 2, 0, -Math.PI / 2],
+  },
+  {
+    name: 'Hall',
+    model: '/3dmodels/sockets/socket-socket-ethernet.glb',
+    position: [-6.91, 4.1, 4.1],
+    rotation: [-Math.PI / 2, 0, Math.PI / 1],
+  },
+  {
+    name: 'Big Room Bed Sockets 1',
+    model: '/3dmodels/sockets/single-socket.glb',
+    position: [-10.85, 3.8, 0.5],
+    rotation: [-Math.PI / 2, 0, -Math.PI / 2],
+  },
+  {
+    name: 'Big Room Bed Sockets 2',
+    model: '/3dmodels/sockets/single-socket.glb',
+    position: [-10.85, 3.8, 3.4],
+    rotation: [-Math.PI / 2, 0, -Math.PI / 2],
+  },
+  {
+    name: 'Big Room window Sockets',
+    model: '/3dmodels/sockets/single-socket.glb',
+    position: [-9.2, 3.8, 3.81],
+    rotation: [-Math.PI / 2, 0, 0],
+  },
+  {
+    name: 'Big Room Desk Sockets',
+    model: '/3dmodels/sockets/single-socket.glb',
+    position: [-6.97, 3.8, 0.5],
+    rotation: [-Math.PI / 2, 0, Math.PI / 2],
   },
 ];
