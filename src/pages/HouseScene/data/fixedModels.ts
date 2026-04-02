@@ -209,7 +209,7 @@ export const fixedModels: ThreeModel[] = [
   {
     name: "Hall",
     model: "/3dmodels/sockets/socket-socket-ethernet.glb",
-    position: [-6.91, 4.1, 4.1],
+    position: [-6.91, 4.6, 4.1],
     rotation: [-Math.PI / 2, 0, Math.PI / 1],
   },
   {
