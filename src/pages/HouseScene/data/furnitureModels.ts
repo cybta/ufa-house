@@ -22,7 +22,7 @@ export const furnitureModels: ThreeModel[] = [
   {
     name: 'bathroom-f2',
     model: '/3dmodels/bathroom-f2.glb',
-    position: [-4.945, 3.6, 5.32],
+    position: [-4.925, 3.6, 5.32],
     rotation: [0, Math.PI / 2, 0],
   },
   {
