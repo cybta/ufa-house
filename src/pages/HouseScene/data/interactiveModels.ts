@@ -79,6 +79,13 @@ export const interactiveModels: ThreeModel[] = [
   },
 
   {
+    name: 'Bathroom-light-switch',
+    model: '/3dmodels/sockets/single-socket.glb',
+    position: [-5.48, 4.6, 4.1],
+    rotation: [Math.PI / 2, 0, 0],
+  },
+
+  {
     name: 'Office-light-switch',
     model: '/3dmodels/sockets/single-switch.glb',
     position: [-5.85, 4.6, 6.5],
