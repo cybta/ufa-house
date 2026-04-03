@@ -1,14 +1,14 @@
 // src/HouseScene.tsx
-import { useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Physics } from '@react-three/cannon';
-import { PointerLockControls, Sky, Environment } from '@react-three/drei';
+import { useState, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Physics } from "@react-three/cannon";
+import { PointerLockControls, Sky, Environment } from "@react-three/drei";
 
-import { PhysicsObject } from './components/3DObject';
-import { Player } from './components/Player';
-import { InteractableObject } from './components/InteractableModel';
-import InterActionPopup from './components/popups';
-import { fixedModels, furnitureModels, interactiveModels } from './data';
+import { PhysicsObject } from "./components/3DObject";
+import { Player } from "./components/Player";
+import { InteractableObject } from "./components/InteractableModel";
+import InterActionPopup from "./components/popups";
+import { fixedModels, furnitureModels, interactiveModels } from "./data";
 
 // import { Debug } from '@react-three/cannon'; // Import this
 
@@ -19,35 +19,40 @@ function HouseScene() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'h' || event.key === 'H') {
+      if (
+        event.key === "h" ||
+        event.key === "H" ||
+        event.key === "р" ||
+        event.key === "Р"
+      ) {
         setFurnitureHidden((prev) => !prev);
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <div style={{ width: "100vw", height: "100vh" }}>
       {showOverlay && (
         <div
           style={{
-            position: 'absolute',
+            position: "absolute",
             zIndex: 10,
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            background: 'white',
-            padding: '2rem',
-            borderRadius: '10px',
-            boxShadow: '0 0 20px rgba(0,0,0,0.5)',
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            background: "white",
+            padding: "2rem",
+            borderRadius: "10px",
+            boxShadow: "0 0 20px rgba(0,0,0,0.5)",
           }}
         >
           <InterActionPopup
-            room='desk'
+            room="desk"
             setShowOverlay={setShowOverlay}
             canvasEl={canvasEl}
           />
@@ -61,7 +66,7 @@ function HouseScene() {
           antialias: true,
           // CHANGE 1: Increased from 0.6 to 1.2 (Global Brightness)
           toneMappingExposure: 1,
-          powerPreference: 'high-performance',
+          powerPreference: "high-performance",
         }}
         onCreated={({ gl }) => setCanvasEl(gl.domElement)}
       >
@@ -71,7 +76,7 @@ function HouseScene() {
         <ambientLight intensity={0.8} />
 
         {/* CHANGE 3: Added environment intensity (Brighter reflections) */}
-        <Environment preset='apartment' environmentIntensity={1.1} />
+        <Environment preset="apartment" environmentIntensity={1.1} />
 
         {/* CHANGE 4: Increased from 1.0 to 2.5 (Brighter Sun) */}
         <directionalLight

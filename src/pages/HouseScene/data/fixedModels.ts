@@ -94,7 +94,7 @@ export const fixedModels: ThreeModel[] = [
   // Sockets
   {
     name: "Entrance socket ",
-    model: "/3dmodels/sockets/single-socket.glb",
+    model: "/3dmodels/sockets/socket-socket.glb",
     position: [-5.83, 0.91, 5.6],
     rotation: [Math.PI / 2, 0, -Math.PI / 2],
   },
@@ -174,16 +174,16 @@ export const fixedModels: ThreeModel[] = [
   },
 
   {
-    name: "Living socket 3",
-    model: "/3dmodels/sockets/single-socket.glb",
-    position: [-10.8, 1, 6.5],
+    name: "Guest socket 1",
+    model: "/3dmodels/sockets/socket-socket.glb",
+    position: [-10.8, 0.91, 6.5],
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
   },
 
   {
-    name: "Living socket 3",
-    model: "/3dmodels/sockets/single-socket.glb",
-    position: [-10.8, 1, 8.5],
+    name: "Guest socket 2",
+    model: "/3dmodels/sockets/socket-socket.glb",
+    position: [-10.8, 0.91, 8.5],
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
   },
 
@@ -209,7 +209,7 @@ export const fixedModels: ThreeModel[] = [
   {
     name: "Hall",
     model: "/3dmodels/sockets/socket-socket-ethernet.glb",
-    position: [-6.91, 4.6, 4.1],
+    position: [-6.91, 5.9, 4.1],
     rotation: [-Math.PI / 2, 0, Math.PI / 1],
   },
   {
