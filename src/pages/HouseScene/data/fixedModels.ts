@@ -129,10 +129,16 @@ export const fixedModels: ThreeModel[] = [
     rotation: [-Math.PI / 2, 0, 0],
   },
   {
-    name: "Kichen-sockets",
+    name: "Kichen-sockets 1",
     model: "/3dmodels/sockets/dual-socket-socket.glb",
     position: [-5.15, 1.6, 3.75],
     rotation: [-Math.PI / 2, 0, 0],
+  },
+  {
+    name: "Kichen-sockets 2",
+    model: "/3dmodels/sockets/socket-socket.glb",
+    position: [-4.15, 1.6, 2.25],
+    rotation: [-Math.PI / 2, 0, Math.PI / 2],
   },
   {
     name: "Fridge-socket",
@@ -166,29 +172,6 @@ export const fixedModels: ThreeModel[] = [
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
   },
 
-  // Terrace
-
-  {
-    name: "Terrace socket 1",
-    model: "/3dmodels/sockets/socket-socket.glb",
-    position: [-10.75, 0.91, -0.2],
-    rotation: [-Math.PI / 2, 0, 0],
-  },
-
-  {
-    name: "Terrace socket 2",
-    model: "/3dmodels/sockets/socket-socket.glb",
-    position: [-4.3, 0.91, -0.2],
-    rotation: [-Math.PI / 2, 0, 0],
-  },
-
-  {
-    name: "Terrace Switch",
-    model: "/3dmodels/sockets/single-switch.glb",
-    position: [-7.1, 1.6, -0.2],
-    rotation: [-Math.PI / 2, 0, 0],
-  },
-
   {
     name: "Hall-Router-socket",
     model: "/3dmodels/sockets/socket-socket-ethernet.glb",
@@ -215,6 +198,28 @@ export const fixedModels: ThreeModel[] = [
     model: "/3dmodels/sockets/socket-socket.glb",
     position: [-10.8, 0.91, 8.5],
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
+  },
+
+  // Terrace
+  {
+    name: "Terrace socket 1",
+    model: "/3dmodels/sockets/socket-socket.glb",
+    position: [-10.75, 0.91, -0.2],
+    rotation: [-Math.PI / 2, 0, 0],
+  },
+
+  {
+    name: "Terrace socket 2",
+    model: "/3dmodels/sockets/socket-socket.glb",
+    position: [-4.3, 0.91, -0.2],
+    rotation: [-Math.PI / 2, 0, 0],
+  },
+
+  {
+    name: "Terrace Switch",
+    model: "/3dmodels/sockets/single-switch.glb",
+    position: [-7.1, 1.6, -0.2],
+    rotation: [-Math.PI / 2, 0, 0],
   },
 
   // Second Floor Sockets
