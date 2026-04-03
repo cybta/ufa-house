@@ -140,6 +140,13 @@ export const fixedModels: ThreeModel[] = [
     position: [-4.2, 0.91, 0.7],
     rotation: [-Math.PI / 2, 0, Math.PI / 2],
   },
+
+  {
+    name: "Aspirateur socket",
+    model: "/3dmodels/sockets/single-socket.glb",
+    position: [-4.2, 2.8, 1.4],
+    rotation: [-Math.PI / 2, 0, Math.PI / 2],
+  },
   {
     name: "Oven-socket",
     model: "/3dmodels/sockets/socket-socket.glb",
@@ -157,6 +164,29 @@ export const fixedModels: ThreeModel[] = [
     model: "/3dmodels/sockets/socket-socket.glb",
     position: [-10.85, 0.91, 1.8],
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
+  },
+
+  // Terrace
+
+  {
+    name: "Terrace socket 1",
+    model: "/3dmodels/sockets/socket-socket.glb",
+    position: [-10.75, 0.91, -0.2],
+    rotation: [-Math.PI / 2, 0, 0],
+  },
+
+  {
+    name: "Terrace socket 2",
+    model: "/3dmodels/sockets/socket-socket.glb",
+    position: [-4.3, 0.91, -0.2],
+    rotation: [-Math.PI / 2, 0, 0],
+  },
+
+  {
+    name: "Terrace Switch",
+    model: "/3dmodels/sockets/single-switch.glb",
+    position: [-7.1, 1.6, -0.2],
+    rotation: [-Math.PI / 2, 0, 0],
   },
 
   {
