@@ -15,8 +15,8 @@ export const furnitureModels: ThreeModel[] = [
   },
   {
     name: 'utilityRoom',
-    model: '/3dmodels/utility-room-v2.glb',
-    position: [-5.57, 0.6, 7.45],
+    model: '/3dmodels/utility-room.glb',
+    position: [-5.555, 0.6, 7.45],
     rotation: [0, Math.PI / 2, 0],
   },
   {

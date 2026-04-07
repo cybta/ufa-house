@@ -55,12 +55,6 @@ export const fixedModels: ThreeModel[] = [
     rotation: [0, 0, 0],
   },
   {
-    name: 'UtilityRoom radiator',
-    model: '/3dmodels/radiators/700.glb',
-    position: [-6.88, 1, 8.4],
-    rotation: [0, Math.PI / 2, 0],
-  },
-  {
     name: 'Guestroom radiator',
     model: '/3dmodels/radiators/800.glb',
     position: [-7.6, 0.91, 8.75],
@@ -97,24 +91,6 @@ export const fixedModels: ThreeModel[] = [
     model: '/3dmodels/sockets/socket-socket.glb',
     position: [-5.83, 0.91, 5.6],
     rotation: [Math.PI / 2, 0, -Math.PI / 2],
-  },
-  {
-    name: 'Robot socket ',
-    model: '/3dmodels/sockets/single-socket.glb',
-    position: [-6.98, 0.91, 7],
-    rotation: [Math.PI / 2, 0, -Math.PI / 2],
-  },
-  {
-    name: 'Utility socket ',
-    model: '/3dmodels/sockets/socket-socket.glb',
-    position: [-6.98, 1.6, 6.4],
-    rotation: [Math.PI / 2, 0, -Math.PI / 2],
-  },
-  {
-    name: 'Washing Machine socket ',
-    model: '/3dmodels/sockets/single-socket.glb',
-    position: [-4.15, 0.91, 8.5],
-    rotation: [Math.PI / 2, 0, Math.PI / 2],
   },
   {
     name: 'Salon TV-socket',
